@@ -30,7 +30,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE TABLE schema_migrations (
@@ -38,10 +38,10 @@ CREATE TABLE schema_migrations (
 );
 
 
-ALTER TABLE public.schema_migrations OWNER TO jerdvo;
+ALTER TABLE public.schema_migrations OWNER TO gmaps_user;
 
 --
--- Name: strutturas; Type: TABLE; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: strutturas; Type: TABLE; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE TABLE strutturas (
@@ -111,10 +111,10 @@ CREATE TABLE strutturas (
 );
 
 
-ALTER TABLE public.strutturas OWNER TO jerdvo;
+ALTER TABLE public.strutturas OWNER TO gmaps_user;
 
 --
--- Name: strutturas_id_seq; Type: SEQUENCE; Schema: public; Owner: jerdvo
+-- Name: strutturas_id_seq; Type: SEQUENCE; Schema: public; Owner: gmaps_user
 --
 
 CREATE SEQUENCE strutturas_id_seq
@@ -125,24 +125,24 @@ CREATE SEQUENCE strutturas_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.strutturas_id_seq OWNER TO jerdvo;
+ALTER TABLE public.strutturas_id_seq OWNER TO gmaps_user;
 
 --
--- Name: strutturas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jerdvo
+-- Name: strutturas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gmaps_user
 --
 
 ALTER SEQUENCE strutturas_id_seq OWNED BY strutturas.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: jerdvo
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gmaps_user
 --
 
 ALTER TABLE ONLY strutturas ALTER COLUMN id SET DEFAULT nextval('strutturas_id_seq'::regclass);
 
 
 --
--- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: jerdvo
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: gmaps_user
 --
 
 COPY schema_migrations (version) FROM stdin;
@@ -151,7 +151,7 @@ COPY schema_migrations (version) FROM stdin;
 
 
 --
--- Data for Name: strutturas; Type: TABLE DATA; Schema: public; Owner: jerdvo
+-- Data for Name: strutturas; Type: TABLE DATA; Schema: public; Owner: gmaps_user
 --
 
 COPY strutturas (id, nome, slug, gruppo, nazione_id, regione_id, province_id, destination_id, destination_alt, comune, cap, stelle, indirizzo, banca, banca_iban, banca_intestazione, email_conferma, email_commerciale, email_amministrazione, telefono, telefono_commerciale, telefono_amministrazione, commerciale_nome, commerciale_cognome, amministrazione_nome, amministrazione_cognome, partita_iva, codice_fiscale, prezzi_bambini, long_stay, eta_max_bambini, tassa_soggiorno, tassa_al_di, tasso_fisso, tasso, intervallo_bambino_1, intervallo_bambino_2, intervallo_bambino_3, intervallo_bambino_4, intervallo_bambino_5, politica_bambini, politica_cancellation, long_stay_info, carte_di_credito, servizi, posizione, attrazioni, web, commission, lat, lon, zoom_level, own_site, groups, contracts, italia_slow_tour, sms, sms_confirm, latitude, longitude, created_at, updated_at, lonlat) FROM stdin;
@@ -187,14 +187,14 @@ COPY strutturas (id, nome, slug, gruppo, nazione_id, regione_id, province_id, de
 
 
 --
--- Name: strutturas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jerdvo
+-- Name: strutturas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gmaps_user
 --
 
 SELECT pg_catalog.setval('strutturas_id_seq', 1, true);
 
 
 --
--- Name: strutturas_pkey; Type: CONSTRAINT; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: strutturas_pkey; Type: CONSTRAINT; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 ALTER TABLE ONLY strutturas
@@ -202,96 +202,96 @@ ALTER TABLE ONLY strutturas
 
 
 --
--- Name: index_strutturas_on_cap; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_cap; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_cap ON strutturas USING btree (cap);
 
 
 --
--- Name: index_strutturas_on_comune; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_comune; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_comune ON strutturas USING btree (comune);
 
 
 --
--- Name: index_strutturas_on_destination_alt; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_destination_alt; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_destination_alt ON strutturas USING btree (destination_alt);
 
 
 --
--- Name: index_strutturas_on_destination_id; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_destination_id; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_destination_id ON strutturas USING btree (destination_id);
 
 
 --
--- Name: index_strutturas_on_lat; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_lat; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_lat ON strutturas USING btree (lat);
 
 
 --
--- Name: index_strutturas_on_lon; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_lon; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_lon ON strutturas USING btree (lon);
 
 
 --
--- Name: index_strutturas_on_nazione_id; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_nazione_id; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_nazione_id ON strutturas USING btree (nazione_id);
 
 
 --
--- Name: index_strutturas_on_nome; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_nome; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_nome ON strutturas USING btree (nome);
 
 
 --
--- Name: index_strutturas_on_province_id; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_province_id; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_province_id ON strutturas USING btree (province_id);
 
 
 --
--- Name: index_strutturas_on_regione_id; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_regione_id; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_regione_id ON strutturas USING btree (regione_id);
 
 
 --
--- Name: index_strutturas_on_slug; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: index_strutturas_on_slug; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE INDEX index_strutturas_on_slug ON strutturas USING btree (slug);
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: jerdvo; Tablespace: 
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: gmaps_user; Tablespace: 
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
 
 
 --
--- Name: public; Type: ACL; Schema: -; Owner: jerdvo
+-- Name: public; Type: ACL; Schema: -; Owner: gmaps_user
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM jerdvo;
-GRANT ALL ON SCHEMA public TO jerdvo;
+REVOKE ALL ON SCHEMA public FROM gmaps_user;
+GRANT ALL ON SCHEMA public TO gmaps_user;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
