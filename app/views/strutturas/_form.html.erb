@@ -1,0 +1,89 @@
+<%= form_for(@struttura) do |f| %>
+  <% if @struttura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@struttura.errors.count, "error") %> prohibited this struttura from being saved:</h2>
+
+      <ul>
+      <% @struttura.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="row">
+
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label :nome %><%= f.text_field :nome %>
+            <%= f.label :slug, :class => 'mandatory' %><%= f.text_field :slug %>
+            <%= f.label :lon %><%= f.text_field :lon %>
+            <%= f.label :lat %><%= f.text_field :lat %>
+        <%= f.label :stelle %><%= f.text_field :stelle %>
+        <%= f.label :gruppo %><%= f.text_field :gruppo %>
+        <%= f.label :web %><%= f.text_field :web %><br />
+        <%= f.label :longitude %><%= f.text_field :latitude %>
+        <%= f.label :latitude %><%= f.text_field :latitude %>
+    
+      </div>
+      <div class="small-3 columns">
+        <table>
+          <tr><td colspan='2'><%= f.label :destination %><%= f.text_field :destination_id %></td></tr>
+          <tr><td><%= f.label :indirizzo %></td><td><b><%= f.text_field :indirizzo %></b></td></tr>
+          <tr><td><%= f.label :comune %></td><td><b><%= f.text_field :comune %></b></td></tr>
+          <tr><td><%= f.label :cap %></td><td><b><%= f.text_field :cap %></b></td></tr>
+          <tr><td>Provincia</td><td><%= f.text_field :province_id %></td></tr>
+          <tr><td>Regione</td><td><%= f.text_field :regione_id %></td></tr>
+          <tr><td></td><td><%= f.text_field :nazione_id %></td></tr>
+          <tr><td><%= f.label :own_site %> </td><td><%= f.check_box :own_site %></td></tr>
+          <tr><td><%= f.label :long_stay %> </td><td><%= f.check_box :long_stay %></td></tr>
+          <tr><td><%= t '.commission' %></td><td><%= f.number_field :commission %></td></tr>
+          <tr><td><%= f.label :groups %><%= f.check_box :groups %> </td><td> <%= f.label :contracts %><%= f.check_box :contracts %></td></tr>
+        </table>
+      </div>
+      <div class="small-5 columns">
+        <%= f.check_box :sms %><%= t '.sms_html' %><br />
+        <%= t('.sms_confirm') %><%= f.text_field :sms_confirm %><br />
+        <%= f.check_box :tassa_soggiorno %><%= f.label :tassa_di_soggiorno %>
+        <%= f.check_box :tassa_al_di %><%= f.label :tassa_al_di %>
+        <%= f.label :valore %><%= f.text_field :tasso %>
+        <%= f.label :eta_max_bambini %><%= f.text_field :eta_max_bambini %>
+      </div>
+    </div>
+    <div class="row highlight">
+        </div>
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label :partita_iva %><%= f.text_field :partita_iva %>
+        <%= f.label :codice_fiscale %><%= f.text_field :codice_fiscale %>
+        <%= f.label :banca %><%= f.text_field :banca %>
+        <%= f.label :banca_iban %><%= f.text_field :banca_iban %>
+        <%= f.label :banca_intestazione %><%= f.text_field :banca_intestazione %>
+      </div>
+      <div class="small-3 columns">
+        <%= f.label :telefono %><%= f.text_field :telefono %>
+        <%= f.label :email_conferma %><%= f.text_field :email_conferma %>
+        <%= f.label :email_commerciale %><%= f.text_field :email_commerciale %>
+        <%= f.label :email_amministrazione %><%= f.text_field :email_amministrazione %>
+      </div>
+      <div class="small-3 columns">
+        <%= f.label :commerciale_nome %><%= f.text_field :commerciale_nome %>
+        <%= f.label :commerciale_cognome %><%= f.text_field :commerciale_cognome %>
+        <%= f.label :telefono_commerciale %><%= f.text_field :telefono_commerciale %>
+      </div>
+      <div class="small-3 columns">
+        <%= f.label :amministrazione_nome %><%= f.text_field :amministrazione_nome %>
+        <%= f.label :amministrazione_cognome %><%= f.text_field :amministrazione_cognome %>
+        <%= f.label :telefono_amministrazione %><%= f.text_field :telefono_amministrazione %>
+      </div>
+    </div>
+</div>
+
+
+<div class="row">
+  <div class="small-3 columns">
+    <%= f.submit '.submit' %>
+  </div>
+</div>
+<% end %>

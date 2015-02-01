@@ -1,0 +1,3 @@
+The strutturas table is meant to be updated nightly via batch process for its lonlat variable from the gmaps app.
+
+the itinerariostrutturas table will be fully updated by the gmaps app.

@@ -1,0 +1,19 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+development:
+  adapter: postgresql
+  database: s4gmaps_development
+  username: gmaps_user
+  
+test:
+  adapter: postgresql
+  database: s4gmaps_test
+  username: gmaps_user
+
+production:
+  adapter: postgresql
+  database: s4gmaps_production
+  username: gmaps_user

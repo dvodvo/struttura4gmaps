@@ -1,0 +1,31 @@
+<h4>Listing strutturas <%= @strutturas.count %></h4>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Provincia<br />Regione</th>
+    <th>Destination</th>
+    <th>Comune</th>
+    <th>Lon</th>
+    <th>Lat</th>
+    <th></th>
+  </tr>
+
+<% @strutturas.each do |struttura| %>
+  <tr>
+    <td><%= struttura.id %> <%= struttura.nome %></td>
+    <td><%= struttura.province_id %><br /><%= struttura.regione_id %><br /></td>
+    <td><%= struttura.destination_id %></td>
+    <td><%= struttura.comune %></td>
+    <td><%= struttura.lon %></td>
+    <td><%= struttura.lat %></td>
+    <td><%= link_to 'Show', struttura %><br />
+        <%= link_to t('edit'), edit_struttura_path(struttura) %><br />
+        <%= link_to 'Destroy', struttura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+<%= link_to 'Nuova Struttura', new_struttura_path %>

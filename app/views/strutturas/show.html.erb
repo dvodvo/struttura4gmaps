@@ -1,0 +1,68 @@
+    <div class="row">
+      <div class="small-3 columns">
+        <h5><%= @struttura.nome %></h5>
+        <span class='smaller'>stelle</span>
+          <%= @struttura.stelle %><br />
+        <%= @struttura.gruppo %><br />
+        <span class='smaller'>sito</span><br />
+        <%= @struttura.web %><br /><br />
+        <%= @struttura.indirizzo %><br />
+        <%= @struttura.cap %>
+        <%= @struttura.comune %>
+        (<%= @struttura.province_id %>) 
+        <%= @struttura.nazione_id %><br /><br />
+        <span class='smaller'>p_iva</span> <%= @struttura.partita_iva %><br />
+        <span class='smaller'>codice_fiscale</span> <%= @struttura.codice_fiscale %><br />
+        lon <%= @struttura.lon %><br />
+        lat <%= @struttura.lat %><br />
+        <%= @struttura.lonlat %><br />
+          destination <%= @struttura.destination_id %><br />
+          own_site <%= @struttura.own_site %><br />
+          italia_slow_tour <%= @struttura.italia_slow_tour %><br />
+         sms<%= @struttura.sms_confirm %>
+      </div>
+
+      <div class="small-3 columns">
+        <span class='smaller'>politica_bambini</span><br /> <%= @struttura.politica_bambini %><br />
+        <span class='smaller'>eta_max_bambini</span><br /> <%= @struttura.eta_max_bambini %><br />
+        <span class='smaller'>politica_cancellation</span><br /> <%= @struttura.politica_cancellation %>
+        <span class='smaller'>prezzi_bambini</span><br /> <%= @struttura.prezzi_bambini %><br />
+        <span class='smaller'>Intervallo bambino 1:</span><br /> <%= @struttura.intervallo_bambino_1 %>
+        <span class='smaller'>Intervallo bambino 2:</span><br /> <%= @struttura.intervallo_bambino_2 %>
+        <span class='smaller'>Intervallo bambino 3:</span><br /> <%= @struttura.intervallo_bambino_3 %>
+        <span class='smaller'>Intervallo bambino 4:</span><br /> <%= @struttura.intervallo_bambino_4 %>
+        <span class='smaller'>Intervallo bambino 5:</span><br /> <%= @struttura.intervallo_bambino_5 %>
+      </div>
+      <div class="small-3 columns">
+        <span class='smaller'>servizi</span><br /> <%= @struttura.servizi %><br />
+        <% if @struttura.long_stay? %><br /><span class='smaller'><%= t 'strutturas.long_stay_info' %></span><br /> <%= @struttura.long_stay_info %><% end %>
+      </div>
+      <div class="small-3 columns">
+        <span class='smaller'>posizione</span><br /> <%= @struttura.posizione %>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="small-4 columns">
+        <span class='smaller'>Commerciale nome:</span><br /> <%= @struttura.commerciale_nome %><br />
+        <span class='smaller'>Commerciale cognome:</span><br /> <%= @struttura.commerciale_cognome %><br />
+        <span class='smaller'>Telefono commerciale:</span><br /> <%= @struttura.telefono_commerciale %>
+      </div>
+      <div class="small-4 columns">
+        <span class='smaller'>Amministrazione nome:</span><br /> <%= @struttura.amministrazione_nome %><br />
+        <span class='smaller'>Amministrazione cognome:</span><br /> <%= @struttura.amministrazione_cognome %><br />
+        <span class='smaller'>Telefono amministrazione:</span><br /> <%= @struttura.telefono_amministrazione %>
+      </div>
+      <div class="small-4 columns">
+      </div>
+    </div>
+
+
+<%= link_to 'Edit', edit_struttura_path(@struttura) %> |
+<%= link_to 'Back', strutturas_path %>
+
+        <% if @struttura.posizione? %>
+          <div id="map_canvas" style="width:400px; height:400px"></div>
+        <% end %>
+
